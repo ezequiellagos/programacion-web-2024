@@ -1,0 +1,9 @@
+Crear una carpeta con su nombre y apellido:
+
+ezequiellagos/
+
+Deben buscar como trabajar con archivos desde php, abrirlos, leerlos y escribir en ellos.
+
+Cuales son los modos de apertura.
+
+Fecha entrega: 30/09/2024
