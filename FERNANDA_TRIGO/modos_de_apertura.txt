@@ -1,0 +1,17 @@
+
+abrirlos: $archivo = fopen("ruta_del_archivo.txt", "modo");
+
+leerlos: $contenido = file_get_contents("ruta_del_archivo.txt");
+//este es para leer todo el contenido. 
+
+escribir: fwrite($archivo, "Hola, mundo");
+
+Modos de apertura
+- r : Solo lectura(falla si no existe)
+- r+: Lectura y escritura (falla si no exite)
+- w : Solo escritura(Sobreescribe o crea)
+- w+: Lectura y escritura(Sobreescribe o crea)
+- a : Solo escritura(Añade al final o crea)
+- a+: Lectura y escritura(Añade al final o crea)
+- x : Solo escritura(falla si no existe)
+- x+: Lectura y escritura(falla si no existe)
