@@ -15,7 +15,8 @@
     
     */
 
-    include "proceso.php";
+    require_once "proceso.php";
 
-    echo "test";
+    echo suma(5,10);
+
 ?>
