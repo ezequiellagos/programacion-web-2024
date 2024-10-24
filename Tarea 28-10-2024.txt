@@ -1,0 +1,23 @@
+La tarea consiste en que deben recrear el carnet de identidad con su porte frontal y posterior, además deben investigar como usar e implementar un codigo qr en el mismo.
+
+Desde un formulario diseñado con Bootstrap, se deben ingresar los datos deben ser acordes a lo que se pida a continuación, como nombres, fechas e imagenes.
+
+Los elementos que debe tener son los siguientes:
+
+Frontal:
+- Nombres
+- Apellidos
+- Fecha de nacimiento
+- Genero
+- Foto de la persona
+- Rut
+
+Posterior:
+- Codigo QR
+- Lugar de nacimiento
+- Profesión
+
+Debe generar ambas partes posterior y frontal, puede usar la imagen de este enlace para referencia: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFWuMNk-U1gwpbP0voltR1Q8Yb7mSirUrNjt1zX-RG4KC4doF7fEruh3Rcf2UAjv70Tx4SJ1iytHG-TZTxX5LHz2EH1FoMPwFoEgCn4pFT8w6Uj-Lkg2NM62JLMgaEz_M88wxsU1vIZB8/s1600/cedula-identidad.png
+
+El código QR debe contener los datos personales de la persona y ser legible y deben generarlo con codigo.
+
