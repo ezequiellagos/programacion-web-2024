@@ -21,3 +21,6 @@ Debe generar ambas partes posterior y frontal, puede usar la imagen de este enla
 
 El código QR debe contener los datos personales de la persona y ser legible y deben generarlo con codigo.
 
+Esta tarea tiene 0.5 decimas.
+
+Fecha de entrega: 4 de noviembre.
