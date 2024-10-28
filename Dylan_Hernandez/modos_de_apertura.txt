@@ -1,0 +1,30 @@
+-Abrir archivos 
+$archivo = fopen("ruta_del_archivo.txt", "modo");
+
+-Leer archivos
+$contenido = file_get_contents("ruta_del_archivo.txt");
+"file_get_contents(): Lee todo el contenido de un archivo en una cadena"
+
+
+-Escribir en archivos
+fwrite($archivo, "Buenos dias, mundo");
+
+"r": Solo lectura.
+"r+": Lectura y escritura.
+"w": Solo escritura (sobrescribe el contenido o crea el archivo).
+"w+": Lectura y escritura (sobrescribe el contenido o crea el archivo).
+"a": Solo escritura (añade al final del archivo o crea el archivo).
+"a+": Lectura y escritura (añade al final o crea el archivo).
+
+
+-Funciones principales:
+
+Abrir: fopen()
+Leer:
+Todo el archivo: file_get_contents()
+Línea por línea: fgets()
+Leer todo el archivo en un array: file()
+Leer por partes: fread()
+Escribir:
+Escribir datos: fwrite()
+Escribir directamente a un archivo: file_put_contents()
