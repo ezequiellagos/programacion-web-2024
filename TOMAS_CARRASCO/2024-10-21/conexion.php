@@ -10,7 +10,7 @@ $db_user = "root";
 $db_pass = "";
 
 // Crear conexion de manera procedural
-$conexion = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+// $conexion = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
 // Verificar conexion
 // if(!$conexion){
@@ -18,24 +18,30 @@ $conexion = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 // }
 
 // Obtener datos
-// $sql = "SELECT * FROM alumnos;";
+$sql = "SELECT * FROM alumnos;";
 
-// Ejecutar la consulta
-$resultado = mysqli_query($conexion, $sql);
+// // Ejecutar la consulta
+// $resultado = mysqli_query($conexion, $sql);
 
-// Verificar si hay resultados
-if (mysqli_num_rows($resultado) > 0) {
-    // Mostrar los datos de cada fila
-    while($row = mysqli_fetch_assoc($resultado)){
-        echo "id: " . $row["id"] . " - Nombre: " . $row["nombre"] . " - Apellido: " . $row["apellido"] . "<br>";
-    }
-}else {
-    echo "0 resultados";
-}
+// echo "<pre>";
+// print_r($resultado);
+// echo "</pre>";
 
-// Cerrar la conexion
-mysqli_close($conexion);
+// // Verificar si hay resultados
+// if (mysqli_num_rows($resultado) > 0) {
+//     // Mostrar los datos de cada fila
+//     while($row = mysqli_fetch_assoc($resultado)){
+//         echo "id: " . $row["id"] . " - Nombre: " . $row["nombre"] . " - Apellido: " . $row["apellido"] . "<br>";
+//     }
+// }else {
+//     echo "0 resultados";
+// }
 
+// // Cerrar la conexion
+// mysqli_close($conexion);
+
+
+// Conexion Orientada a objetos
 
 // Crear conexión de manera orientda a objetos
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
@@ -47,6 +53,10 @@ if ($conn->connect_error){
 
 // Ejecutar la consulta
 $result = $conn->query($sql);
+
+echo "<pre>";
+print_r($result);
+echo "</pre>";
 
 // Verificar si hay resultados
 if ($result->num_rows > 0) {
