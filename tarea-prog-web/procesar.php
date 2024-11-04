@@ -15,7 +15,7 @@ print_r($imagen);
 
 function insertar_registro($conn, $names, $lastnames, $gender, $rut, $nationality, $imagen){
     $sql = "
-    INSERT INTO juegos (names, lastnames, gender, rut, nationality, imagen)
+    INSERT INTO dni_db_items (names, lastnames, gender, rut, nationality, imagen)
     VALUES ('$names', '$lastnames', $gender, '$rut', '$nationality', '".$imagen['name']."')
     ";
 
