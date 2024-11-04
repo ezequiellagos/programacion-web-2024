@@ -40,11 +40,11 @@ function subir_archivo($archivo){
 
 insertar_registro(
     $conn,
-    $nombre,
-    $editor,
-    $valor,
-    $genero,
-    $clasificacion,
+    $names,
+    $lastnames,
+    $gender,
+    $rut,
+    $nationality, 
     $imagen
 );
 
