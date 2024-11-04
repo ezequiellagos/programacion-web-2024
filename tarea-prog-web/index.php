@@ -28,8 +28,8 @@
                 
             </div>
             <div class="row-sm-12 mb-3">
-                <label for="Genero" class="form-label">Genero</label>
-                <select name="Genero">
+                <label for="gender" class="form-label">Genero</label>
+                <select name="gender">
                     <option value="M">Masculino</option>
                     <option value="F">Femenino</option>
                 </select>
