@@ -38,34 +38,42 @@ else{
 </head>
 
 <body>
+    
     <div class="container">
         <div class="card">
+            
             <div class="col-12">
-                <div class="row">
-                <div class="col-4 text-center"> 
-                    <img src="<?php echo $destino ?>" alt="Imagen de perfil para carnet" width="350">
-                    <br>
-                    <p>RUN <strong><?php echo $rut ?> </strong></p>
-                </div>
-                <div class="col-8"> 
-                    <div classs="col-8">
-                        <h6 class="texto">APELLIDOS</h6>
-                        <?php echo "<h5>$apellidos</h5>"?>
-                    </div>
-                    <div>
-                        <h6 class="texto">NOMBRES</h6>
-                        <?php echo "<h5>$nombres</h5>"?>
-                    </div>
-                    <div>
-                        <h6 class="texto">FECHA DE NACIMIENTO</h6>
-                        <?php echo"<h5>$fecha_nacimiento</h5>"?>
-                    </div>
-                    <div>
-                        <h6 class="texto">GENERO</h6>
-                        <?php echo"<h5>$genero</h5>"?>
-                    </div>
-                </div>
+            
                 
+            <div class="card text-bg-dark" background-image="imagen_tarea_web.jpg">
+                <div class="row">
+                    <div class="col-4 text-center"> 
+                        <img src="<?php echo $destino ?>" alt="Imagen de perfil para carnet" width="350">
+                        <br>
+                        <p>RUN <strong><?php echo $rut ?> </strong></p>
+                    </div>
+                    <div class="col-8"> 
+                        <div classs="col-8">
+                            <h6 class="texto">APELLIDOS</h6>
+                            <?php echo "<h5>$apellidos</h5>"?>
+                        </div>
+                        <div>
+                            <h6 class="texto">NOMBRES</h6>
+                            <?php echo "<h5>$nombres</h5>"?>
+                        </div>
+                        <div>
+                            <h6 class="texto">FECHA DE NACIMIENTO</h6>
+                            <?php echo"<h5>$fecha_nacimiento</h5>"?>
+                        </div>
+                        <div>
+                            <h6 class="texto">GENERO</h6>
+                            <?php echo"<h5>$genero</h5>"?>
+                        </div>
+                    </div>
+                    
+                        <img src="..." class="card-img" alt="...">
+                        
+                    </div>
                 </div>
             </div>        
         </div>
