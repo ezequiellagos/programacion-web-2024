@@ -1,0 +1,38 @@
+Sistema de Registro y Login con Sesiones
+
+Debe crear un sistema de registro y login con sesiones, el cual debe tener las siguientes características:
+
+Consideraciones:
+- Utilice MySQL para almacenar los usuarios registrados y validar los logins.
+- Para el diseño de las páginas utilice Bootstrap.
+- Para la validación de los campos utilice JavaScript.
+- Para la validación de los campos en el backend utilice PHP.
+- Debe subir la tarea a un repositorio de GitHub que no sea el de la clase.
+
+1. Debe tener una página con un formulario de registro con los siguientes campos:
+    - Nombre
+    - Apellido
+    - Correo Electrónico (Validar que es un correo electrónico)
+    - Contraseña (Validar que tenga al menos 8 caracteres, una mayúscula, una minúscula y un número)
+    - Confirmar Contraseña (Validar que las contraseñas sean iguales)
+    - (Puede agregar otro si lo estima conveniente)
+2.- Debe tener una página con un formulario de login con los siguientes campos:
+    - Correo Electrónico
+    - Contraseña
+    - (Si las credenciales no son correctas, debe mostrar un mensaje de error)
+    - (Cada vez que un usuario inicie sesión debe guardar la información del usuario en una sesión)
+    - (Cada vez que un usuario cierre sesión debe destruir la sesión)
+    - (Cada vez que un usuario inicie sesión debe resgistrarlo además en un archivo de log.txt con la fecha y hora de inicio de sesión)
+3.- Una vez que el usuario inicie sesión debe mostrar una página de bienvenida. En esta página debe:
+    - Mostrar el nombre del usuario que ha iniciado sesión.
+    - Agregue un boton que redireccione a una página para crear productos.
+    - Agregue un botón para cerrar sesión.
+    - Agregue una tabla con los productos creados.
+4.- En la página para crear productos debe validar la sesión del usuario y si este no tiene la sesión iniciada debe ser redirigido hacia la pagina de login. Esta página debe tener un formulario con los siguientes campos:
+    - Nombre del Producto
+    - Descripción
+    - Precio
+    - (Puede agregar otro si lo estima conveniente)
+
+
+
