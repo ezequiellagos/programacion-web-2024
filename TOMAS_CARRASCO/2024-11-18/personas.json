@@ -1,0 +1,17 @@
+[
+    {
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "edad": 30,
+        "materias":[
+            "Programación Web",
+            "Programación Avanzada",
+            "Análisis y diseño de software"
+        ]
+    },
+    {
+        "nombre": "Juan 2",
+        "apellido": "Perez 2",
+        "edad": 20
+    }
+]

@@ -1,15 +1,14 @@
+
 <?php
 
-$tiempo_vida = 300;
-ini_set('session.gc_maxlifetime', $tiempo_vida);
+$tiempo_de_vida = 300;
+ini_set('session.gc_maxlifetime', $tiempo_de_vida);
 
 session_start();
 
-
+$_SESSION["nombre_usuario"] = "juan.perez.24";
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +18,10 @@ session_start();
     <title>Document</title>
 </head>
 <body>
+
+    <h1>
+        <a href="pagina2.php" target="_self">Ir a otra página</a>
+    </h1>
     
 </body>
 </html>
