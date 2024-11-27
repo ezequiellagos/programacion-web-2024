@@ -4,40 +4,62 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-///Recibir Datos
+// Validar datos del formulario
+if (empty($_POST['nombre']) || empty($_POST['rut']) || empty($_POST['email']) || empty($_POST['telefono'])) {
+    die("Todos los campos son obligatorios.");
+}
+
 $nombre = $_POST['nombre'];
 $rut = $_POST['rut'];
 $email = $_POST['email'];
 $telefono = $_POST['telefono'];
-$fecha_registros = date("Y-m-d H:i:s"); 
+$fecha_registros = date("Y-m-d H:i:s");
 
-//procesar la foto
-if (isset($_FILES['foto'])) {
+// Procesar imagen
+if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
     $foto_temporal = $_FILES['foto']['tmp_name'];
     $foto_nombre = $_FILES['foto']['name'];
     $destino = 'img/' . uniqid() . '-' . $foto_nombre;
-    move_uploaded_file($foto_temporal, $destino);
+    if (!move_uploaded_file($foto_temporal, $destino)) {
+        die("Error al mover la imagen al directorio.");
+    }
+} else {
+    die("Error al subir la imagen.");
 }
-else{
-    echo "Error al subir la imagen";
-    exit;    
+
+// Verificar directorio para QR
+if (!is_dir('qr_codigos')) {
+    mkdir('qr_codigos', 0777, true);
 }
-$qr_filename= 'qr_codigos/'.uniqid().'-qr.png';
+$qr_filename = 'qr_codigos/' . uniqid() . '-qr.png';
 
-//conexion BD
-$conexion= new mysqli('localhost','tomas','Micaela8050','registro_evento_carrasco');
-if($conexion->connect_error){
-    die("Error de conexion: ".$conexion->connect_error);
+$db_host = "localhost";
+$db_name = "root";
+$db_user = "registro_evento_carrasco";
+$db_pass = "";
+
+// Conexión BD
+$conexion = new mysqli($db_host, $db_user, $db_pass, $db_name);
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
-$query=$conexion->prepare("INSERT INTO asistentes(nombres, rut, email, telefono, imagen, codigo_qr, fecha_registros ) VALUES (?,?,?,?,?,?,?)");
-$query->bind_param("sssssss",$nombre,$rut,$email,$telefono,$destino,$qr_filename,$fecha_registros);
-$query->execute();
-//Obtener ID con el que se guardo los datos
-$id_asistente=$query->insert_id;
 
-$qr_contenido= "ver_asistente.php?id=$id_asistente";
-QRcode::png($qr_contenido,$qr_filename, QR_ECLEVEL_L,3);
+// Insertar datos
+$query = $conexion->prepare("INSERT INTO asistentes(nombres, rut, email, telefono, imagen, codigo_qr, fecha_registros) VALUES (?, ?, ?, ?, ?, ?, ?)");
+if (!$query) {
+    die("Error al preparar la consulta: " . $conexion->error);
+}
+$query->bind_param("sssssss", $nombre, $rut, $email, $telefono, $destino, $qr_filename, $fecha_registros);
+if (!$query->execute()) {
+    die("Error al ejecutar la consulta: " . $query->error);
+}
 
+// Generar QR
+$id_asistente = $query->insert_id;
+$qr_contenido = "ver_asistente.php?id=$id_asistente";
+QRcode::png($qr_contenido, $qr_filename, QR_ECLEVEL_L, 3);
+
+// Cerrar conexiones
 $query->close();
 $conexion->close();
 ?>
